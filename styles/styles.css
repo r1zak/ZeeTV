@@ -1,0 +1,42 @@
+body {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 10px 0;
+  box-shadow: rgb(red, green, blue);
+  border-bottom: 1px solid black;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.article {
+  border-right: 1px solid black;
+  width: 30%;
+}
