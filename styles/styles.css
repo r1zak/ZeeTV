@@ -4,6 +4,7 @@ button {
 
 svg {
   width: 20px;
+  height: 20px;
 }
 
 h1 {
@@ -32,7 +33,7 @@ body {
 
 .container {
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
@@ -53,9 +54,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, minmax(200px, auto)); */
+}
+
+.logo {
+  margin-right: 10px;
 }
 
 .search {
+  display: flex;
+}
+
+.search__panel {
   display: flex;
   position: relative;
 }
@@ -63,12 +74,13 @@ body {
 .search__input {
   padding: 12px 16px;
   border: 1px solid black;
+  width: 100%;
 }
 
 .search__input-icon {
   position: absolute;
   top: 1px;
-  right: 11px;
+  right: -9px;
   display: flex;
   height: 45px;
   justify-content: center;
@@ -83,6 +95,10 @@ body {
 
 .search__input-icon:hover {
   background-color: black;
+}
+
+.microphone {
+  margin: 0 10px;
 }
 
 .user {
@@ -175,7 +191,7 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid gainsboro;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 500px;
 }
 
@@ -232,14 +248,11 @@ body {
   fill: blue;
 }
 
-.carousel {
-}
-
 .carousel__list {
   overflow-y: scroll;
   transform: rotate(-90deg);
   margin-left: 530px;
-  margin-top: -570px;
+  margin-top: -580px;
   width: 166px;
   height: 1200px;
 }
@@ -273,9 +286,6 @@ body {
   transform-style: preserve-3d;
 }
 
-.cards {
-}
-
 .card {
   position: absolute;
   width: 40%;
@@ -291,26 +301,28 @@ body {
 }
 
 .card__layer {
+  position: absolute;
   transition: 0.5s ease;
   opacity: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+
+.card__layer svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-
-.card__layer svg {
   width: 80px;
-  height: 40px;
+  height: 80px;
 }
 
 .card:hover .card__layer {
-  opacity: 0.3;
-  background-color: gainsboro;
+  opacity: 0.7;
+  background-color: gray;
 }
 
 .card__info {
@@ -355,8 +367,82 @@ img {
   box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
 }
 
+.gallery {
+  margin-top: -200px;
+  margin-bottom: 20px;
+}
+
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  align-items: center;
+  grid-gap: 20px;
+}
+
+.gallery__list-item svg {
+  cursor: pointer;
+}
+
+.gallery__list-item img {
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+}
+
+.gallery__stream-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery__stream-info--text {
+  margin: 0 auto 0 10px;
+}
+.gallery__stream-info h5 {
+  cursor: pointer;
+  margin-right: auto;
+  font-weight: 600;
+}
+
+.gallery__stream-info p {
+  cursor: pointer;
+  color: gray;
+}
+
 .footer {
   text-align: center;
   width: 100%;
   margin-top: auto;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: repeat(2, minmax(auto, 60px));
+  }
+  .notifications {
+    margin-right: 10px;
+  }
+
+  .side {
+    width: 60px;
+  }
+  .side__list {
+    overflow-y: hidden;
+  }
+  .side__list-item {
+    display: flex;
+    justify-content: center;
+  }
+  .side__list-item p {
+    display: none;
+  }
+
+  .side__list-item .online {
+    display: none;
+  }
+  .card {
+    width: 60%;
+  }
+  .info {
+    display: none;
+  }
 }
